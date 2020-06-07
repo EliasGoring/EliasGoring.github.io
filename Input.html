@@ -1,0 +1,41 @@
+<html>
+
+	<head>
+	
+		<title>Input</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script> 
+$(document).ready(function(){
+  $("button").click(function(){
+    $("div").animate({left: '250px'});
+  });
+});
+</script> 
+	</head>
+	
+	<body>
+	
+		<p>Enter a word: </p> <input type ="text" id = "myText" value ="Enter Word">
+		<p>Click the button to see your word. </p>
+		 
+		 <p id="outputArea"></p>
+		
+		 <button onclick="word()">Click Here</button>
+		 
+		 <script>
+		     function word() {
+			 var output = document.getElementById("myText").value;
+			 
+			 if (output === "student"){
+			    output = "You are a rasmussen student";
+			 } else {    
+			}
+			 document.getElementById("outputArea").innerHTML = output;
+			 
+			 }
+		 </script>
+		 <div style="background:#98bf21;height:100px;width:100px;position:absolute;"></div>
+    </body>
+		
+
+</html

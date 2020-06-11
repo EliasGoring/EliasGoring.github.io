@@ -1,0 +1,41 @@
+<html>
+   <head>
+       <title>Module 05 Activity</title>
+   </head>
+   <body>
+      <p>fName:
+	     <input type= "text" id="myfName" value = "Enter first name"
+      </p>
+	  
+	  <p>lName:
+	     <input type= "text" id="mylName" value = "Enter last name">
+	  </p>
+	  <p>address:
+	     <input type= "text" id="myAddress" value = "Enter in your address">
+	  </p>
+	  <p>city:
+	     <input type= "text" id="myCity" value = "Enter in your city">
+	  </p> 
+	  <p>state:
+	     <input type= "text" id="myState" value = "Enter in your state">
+      </p> 
+	  
+	  <button onclick="displayInfo()">
+	       Display Information
+	 </button>
+	 
+	 <p id ="outputArea"></p>
+	   <script>
+	       function displayInfo()
+		   {
+		      var fName = document.getElementById("myfName").value;
+			  var lName = document.getElementById("mylName").value;
+			  var address = document.getElementById("myAddress").value;
+			  var city = document.getElementById("myCity").value;
+			  var state = document.getElementById("myState").value;
+			  var output = fName + lName + "," + address + "," + city + "," + state;
+			  document.getElementById("outputArea").innerHTML = output;
+			}
+		</script>
+    </body>
+</html>	

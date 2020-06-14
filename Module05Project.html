@@ -1,0 +1,42 @@
+<html>
+   <head>
+       <title>Module 05 Project</title>
+   </head>
+   <body>
+      <p>fSport:
+	     <input type= "text" id="myfSport" value = "Enter favorite sport"
+      </p>
+	  
+	  <p>fSong:
+	     <input type= "text" id="myfSong" value = "Enter favorite song">
+	  </p>
+	  <p>fActivity:
+	     <input type= "text" id="myfActivity" value = "Enter favorite activity">
+	  </p>
+	  <p>fGame:
+	     <input type= "text" id="myfGame" value = "Enter favorite game">
+	  </p> 
+	  <p>fMovie:
+	     <input type= "text" id="myfMovie" value = "Enter favorite movie">
+      </p> 
+	  
+	  <button onclick="displayInfo()">
+	       Display Information
+	 </button>
+	 
+	 <p id ="outputArea"></p>
+	   <script>
+	       function displayInfo()
+		   {
+		      var fSport = document.getElementById("myfSport").value;
+			  var fSong = document.getElementById("myfSong").value;
+			  var fActivity = document.getElementById("myfActivity").value;
+			  var fGame = document.getElementById("myfGame").value;
+			  var fMovie = document.getElementById("myfMovie").value;
+			  var output = fSport + fSong + "," + fActivity + "," + fGame + "," + fMovie;
+			  document.getElementById("outputArea").innerHTML = output;
+			}
+		</script>
+    </body>
+</html>	
+       

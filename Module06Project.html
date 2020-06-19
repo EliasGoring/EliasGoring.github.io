@@ -1,0 +1,55 @@
+</p> 
+	  <p>state:
+	     <input type= "text" id="myState" value = "Enter in your state">
+      </p> 
+	  
+	  <button onclick="displayInfo()">
+	       Display Information
+	 </button>
+	 
+	 <p id ="outputArea"></p>
+	   <script>
+	       function displayInfo()
+		   {
+		      var fName = document.getElementById("myfName").value;
+			  var lName = document.getElementById("mylName").value;
+			  var address = document.getElementById("myAddress").value;
+			  var city = document.getElementById("myCity").value;
+			  var state = document.getElementById("myState").value;
+			  var output = "<table border = "+1+">"+
+			                   "<tr>"+
+							       "<th>Field Name</th>"+
+								   "<th>Field Value</th>"+
+								"</tr>"+
+								"<tr>"+
+								   "<td>First Name</td>"+
+								   "<td>"+fName+"</td>"+
+								"</tr>"+
+								"<tr>"+
+								   "<td>Last Name</td>"+
+								   "<td>"+lName+"</td>"+
+			                    "</tr>"+
+								"<tr>"+
+								    "<td>Address</td>"+
+								   "<td>"+address+"</td>"+
+								"</tr>"+
+								"<tr>"+
+								   "<td>City</td>"+
+								   "<td>"+city+"</td>"+
+								"</tr>"+
+								"<tr>"+
+								    "<td>State</td>"+
+								  "<td>"+state+"</td>"+
+								"</tr>"+
+								"</table>";
+						console.log("First Name: " + fName);
+						console.log("Last Name: " + lName);
+						console.log("Address: " + address);
+						console.log("City: " + city);
+						console.log("State: " + state);
+						
+			  document.getElementById("outputArea").innerHTML = output;
+			}
+		</script>
+    </body>
+</html>	

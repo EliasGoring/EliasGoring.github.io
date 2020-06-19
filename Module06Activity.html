@@ -1,0 +1,27 @@
+<html>
+  <head>
+     <title>Calculations</title>
+  </head>
+  <body>
+  <p>length:
+	     <input type= "text" id="Length" value = "Enter length"
+      </p>
+	  
+	  <p>width:
+	     <input type= "text" id="Width" value = "Enter width">
+	  </p>
+     <button onclick="Calculation()">
+	       Display area
+		   <p id ="outputArea"></p>
+	   <script>
+	       function Calculation()
+		   {
+		      var length = document.getElementById("Length").value;
+			  var width = document.getElementById("Width").value;
+			  var area = length * width;
+			    document.getElementById("outputArea").innerHTML = area;
+			}
+			  </script
+	 </button>
+  </body>
+</html>

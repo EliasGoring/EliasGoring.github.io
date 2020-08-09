@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery Mobile Web App</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+
+<link rel="stylesheet" href="themes/ProjectTheme.min.css" />
+<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+
+
+</head>
+<body>
+
+<div id="page" data-role="page" data-theme="a" data-add-back-btn="true">
+	<div data-role="header" data-theme="a">
+	  <div class="logo"><img src="images/rasmussen_logo.png" width="218" height="45" alt=""/></div>
+	</div>
+	<div data-role="panel" id="myPanel">
+<h2>Panel Header</h2>
+<ul data-role="listview" data-theme="c">
+<li class="menu"><a href="#">Menu 1</a></li>
+<li class="menu"><a href="#">Menu 2</a></li>
+<li class="menu"><a href="#">Menu 3</a></li>
+<li class="menu"><a href="#">Menu 4</a></li>
+<li class="menu"><a href="#">Menu 5</a></li>
+<li class="menu"><a href="#">Menu 6</a></li>
+</ul>
+<p>You can close this panel by clicking outside of it, pressing the Esc key, or by swiping.</p>
+</div>
+
+
+
+  <div data-role="header">
+    <h1>Page Header</h1>
+		<a href="#myPanel" class="ui-btn ui-btn-inline">Open Panel</a>
+  </div>
+
+<div data-role="content">
+ <ul data-role="listview" data-theme="c" data-filter="true">
+   <li><a href="#games">games</a></li>
+   <li><a href="#sports">sports </a></li>
+   <li><a href="#movies">movies</a></li>
+   <li><a href="#shows">shows</a></li>
+   <li><a href="#form">Form</a></li>
+   <li><a href="#grid">Grid</a></li>
+
+
+
+ </ul>
+</div>
+
+  <div data-role="footer" data-theme="a">
+     <h3>Simple Page &copy; 20XX</h3>
+  </div>
+</div>
+
+<div id="games" data-role="page" data-theme="a" data-add-back-btn="true">
+	<div data-role="header" data-theme="a" data-add-back-btn="true">
+	  <h1>Section 1</h1>
+	</div>
+	<div data-role="content">
+	  <h3>Header</h3>
+    <p>Game page</p>
+	</div>
+	<div data-role="footer" data-theme="a">
+	  <h4>Your App &copy; 20XX</h4>
+	</div>
+</div>
+
+<div data-role="page" id="grid" data-theme="a" data-add-back-btn="true">
+<div data-role="header" data-theme="a" data-add-back-btn="true">
+<h1>Grid</h1>
+</div>
+<div data-role="content">
+<div class="ui-grid-a">
+<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:60px">Sports</div></div>
+<div class="ui-block-b"><div class="ui-bar ui-bar-a" style="height:60px">Movies</div></div>
+<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:60px">Games</div></div>
+<div class="ui-block-b"><div class="ui-bar ui-bar-a" style="height:60px">Shows</div></div>
+
+</div><!-- /grid-a -->
+
+</div>
+
+<div data-role="page" id="form" data-theme="a" data-add-back-btn="true">
+  <div data-role="header" data-theme="a" data-add-back-btn="true">
+    <h1>Form</h1>
+  </div>
+  <div data-role="content">Content</div>
+  <h3>Header</h3>
+
+  <form action="form.php" method="post">
+    <textarea class="localstorage" placeholder="Anything you type here will be saved with HTML5 localStorage." autofocus></textarea>
+
+    <button class="clear">Clear localStorage</button>
+
+    <button class="empty">Empty localStorage</button>
+
+
+    <label for="fname">First name:</label>
+    <input type="text" name="fname" id="fname" data-clear-btn="true">
+    <label for="lname">Last name:</label>
+    <input type="text" name="lname" id="lname" data-clear-btn="true">
+    <label for="fgame">Favorite game:</label>
+    <input type="text" name="fgame" id="fgame" data-clear-btn="true">
+    <label for="fmovie">Favorite Movie:</label>
+    <input type="text" name="fmovie" id="fmovie" data-clear-btn="true">
+    <label for="fshow">Favorite show:</label>
+    <input type="text" name="fshow" id="fshow" data-clear-btn="true">
+    <input type="submit" value="submit button">
+  </form>
+</div>
+
+
+
+
+<script>
+
+(function() {
+
+var rasm = document.querySelector('.localstorage');
+
+function supportsLocalStorage() {
+
+return typeof(Storage)!== 'undefined';
+
+}
+
+if (!supportsLocalStorage()) {
+
+rasm.value = 'Your browser does not support localStorage.';
+
+} else {
+
+try {
+
+setInterval(function() {
+
+localStorage.setItem('autosave', rasm.value);
+
+}, 1000);
+
+} catch (e) {
+
+if (e == QUOTA_EXCEEDED_ERR) {
+
+alert('Quota exceeded!');
+
+}
+
+}
+
+if (localStorage.getItem('autosave')) {
+
+rasm.value = localStorage.getItem('autosave');
+
+}
+
+document.querySelector('.clear').onclick = function() {
+
+rasm.value = '';
+
+localStorage.removeItem('autosave');
+
+};
+
+document.querySelector('.empty').onclick = function() {
+
+rasm.value = '';
+
+localStorage.clear();
+
+};
+
+}
+
+})();
+
+</script>
